@@ -2,7 +2,7 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tag: function - RandyChan的博客</title>
+<title>Category: 算法 - RandyChan的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -11,7 +11,7 @@
 <meta name="keywords" content="PHP, JavaScript, Vue, RandyChan的博客, MySQL, 算法">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RandyChan的博客">
-<meta property="og:url" content="http://yoursite.com/tags/function/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/算法/index.html">
 <meta property="og:site_name" content="RandyChan的博客">
 <meta property="og:description" content="RandyChan的博客-RandyChan">
 <meta property="og:locale" content="zh_CN">
@@ -140,8 +140,9 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">function</a></li>
+            <li><a href="/categories">Categories</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">算法</a></li>
         </ul>
         </nav>
     </div>
@@ -150,8 +151,8 @@
     <div class="card">
     
     <div class="card-image">
-        <a href="/2019/05/06/10-best-laravel-helpers/" class="image is-7by1">
-            <img class="thumbnail" src="/../images/food.png" alt="十个推荐使用的Laravel函数">
+        <a href="/2019/05/07/bubble-sort/" class="image is-7by1">
+            <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
         </a>
     </div>
     
@@ -159,17 +160,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-06T05:12:40.599Z">2019-05-06</time>
+                <time class="level-item has-text-grey" datetime="2019-05-07T13:17:39.836Z">2019-05-07</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                <a class="has-link-grey -link" href="/categories/算法/">算法</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6 分钟 read (About 933 words)
+                    1 分钟 read (About 191 words)
                 </span>
                 
                 
@@ -178,53 +179,13 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/06/10-best-laravel-helpers/">十个推荐使用的Laravel函数</a>
+                <a class="has-link-black-ter" href="/2019/05/07/bubble-sort/">PHP实现冒泡排序</a>
             
         </h1>
         <div class="content">
-            <p>Laravel中包含各种全局辅助函数。可以使用它们来简化开发流程。在这里，我将编写10个最好用的laravel帮助函，数用于使我的开发更容易。 您必须考虑在必要时使用它们。</p>
-<p>您还可以查看中文文档发现更多的辅助函数<a href="https://learnku.com/docs/laravel/5.8/helpers/3919" target="_blank" rel="noopener">Laravel help functions</a></p>
-<h1 id="array-dot"><a href="#array-dot" class="headerlink" title="array_dot()"></a>array_dot()</h1><hr>
-<p><code>array_dot()</code> 辅助函数允许你将多维数组转换为使用点符号的一维数组。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$array = [</span><br><span class="line">    <span class="hljs-string">'user'</span> =&gt; [<span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'something'</span>],</span><br><span class="line">    <span class="hljs-string">'app'</span> =&gt; [<span class="hljs-string">'creator'</span> =&gt; [<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'someone'</span>], <span class="hljs-string">'created'</span> =&gt; <span class="hljs-string">'today'</span>]</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$dot_array = array_dot($array);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// [user.username] =&gt; something, [app.creator.name] =&gt; someone, [app.created] =&gt; today</span></span><br></pre></td></tr></table></figure>
-<h1 id="array-get"><a href="#array-get" class="headerlink" title="array_get()"></a>array_get()</h1><hr>
-<p><code>array_get()</code> 函数使用点符号从多维数组中检索值。<br><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$array = [</span><br><span class="line">    <span class="hljs-string">'user'</span> =&gt; [<span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'something'</span>],</span><br><span class="line">    <span class="hljs-string">'app'</span> =&gt; [<span class="hljs-string">'creator'</span> =&gt; [<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'someone'</span>], <span class="hljs-string">'created'</span> =&gt; <span class="hljs-string">'today'</span>]</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$name = array_get($array, <span class="hljs-string">'app.creator.name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// someone</span></span><br></pre></td></tr></table></figure></p>
-<p>如果key不存在, <code>array_get()</code> 函数还接受可选的第三个参数作为默认值。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$name = array_get($array, <span class="hljs-string">'app.creator.name'</span>, <span class="hljs-string">'anonymous'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// anonymous</span></span><br></pre></td></tr></table></figure>
-<h1 id="public-path"><a href="#public-path" class="headerlink" title="public_path()"></a>public_path()</h1><hr>
-<p><code>public_path()</code> 返回 Laravel 应用程序中公共目录的完全限定的绝对路径。 你还可以将路径传递到公共目录中的文件或目录以获取该资源的绝对路径。 它将简单地将 public_path() 添加到你的参数中。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$public_path  = public_puth();</span><br><span class="line"></span><br><span class="line">$path = public_path(<span class="hljs-string">'js/app.js'</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="Str-orderedUuid"><a href="#Str-orderedUuid" class="headerlink" title="Str::orderedUuid()"></a>Str::orderedUuid()</h1><hr>
-<p><code>Str::orderedUuid()</code>函数首先生成一个时间戳 uuid。 这个 uuid 可以存储在索引数据库列中。 这些 uuid 是基于时间戳创建的，因此它们会保留你的内容索引。 在 Laravel 5.6 中使用它时，会引发 <code>Ramsey\Uuid\Exception\UnsatisfiedDependencyException</code>。 要解决此问题，只需运行以下命令即可使用 <code>moontoast/math</code> 包：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;moontoast/math&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Str</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> (string) Str::orderByUuid()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// A timestamp first uuid</span></span><br></pre></td></tr></table></figure>
-<h1 id="str-plural"><a href="#str-plural" class="headerlink" title="str_plural()"></a>str_plural()</h1><hr>
-<p><code>str_plural()</code> 函数将字符串转换为复数形式。该功能只支持英文。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">echo</span> str_plural(<span class="hljs-string">'bank'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// banks</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> str_plural(<span class="hljs-string">'developer'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// developers</span></span><br></pre></td></tr></table></figure>
-<h1 id="route"><a href="#route" class="headerlink" title="route()"></a>route()</h1><hr>
-<p><code>route()</code> 函数为指定的路由生成路由 URL。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'login'</span>);</span><br></pre></td></tr></table></figure>
-<p>如果路由接受参数，你可以简单地将它们作为第二个参数传递给一个数组。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'products'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>]);</span><br></pre></td></tr></table></figure>
-<p>如果你想产生一个相对的 URL 而不是一个绝对的 URL，你可以传递 false 作为第三个参数。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'products'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>], <span class="hljs-keyword">false</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="tap"><a href="#tap" class="headerlink" title="tap()"></a>tap()</h1><hr>
-<p><code>tap()</code> 函数接受两个参数：一个值和一个闭包。该值将被传递给闭包，然后该值将被返回。闭包返回值无关紧要。<br><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$user = App\User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> tap($user, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($user)</span> </span>&#123;</span><br><span class="line">    $user-&gt;update([</span><br><span class="line">        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Random'</span></span><br><span class="line">    ]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>它不会返回布尔值，而是返回 <code>User Model</code>。</p>
-<p>如果你没有传递闭包，你也可以使用 <code>User Model</code> 的任何方法。 无论实际返回的方法如何，返回值都将始终为值。 在下面的例子中，它将返回 <code>User Model</code> 而不是布尔值。 <code>update</code> 方法返回布尔值，但由于用了 <code>tap</code> ，所以它将返回 <code>User Model</code>。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$user = App\User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> tap($user)-&gt;update([</span><br><span class="line">    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'SomeName'</span></span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
-<h1 id="dump"><a href="#dump" class="headerlink" title="dump()"></a>dump()</h1><hr>
-<p><code>dump()</code> 函数会 dump 给定的变量，同时也支持同时传入多个变量。这对调试非常有用。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dump($var1);</span><br><span class="line">dump($var1, $var2, $var3);</span><br></pre></td></tr></table></figure>
-<h1 id="str-slug"><a href="#str-slug" class="headerlink" title="str_slug()"></a>str_slug()</h1><hr>
-<p><code>str_slug()</code> 函数将给定的字符串生成一个 URL 友好的 slug。 你可以使用此功能为帖子或产品标题创建一个 slug。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$slug = str_slug(<span class="hljs-string">'Helpers in Laravel'</span>, <span class="hljs-string">'-'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// helpers-in-laravel</span></span><br></pre></td></tr></table></figure>
-<h1 id="optional"><a href="#optional" class="headerlink" title="optional()"></a>optional()</h1><hr>
-<p><code>optional()</code> 函数接受一个参数，你可以调用参数的方法或访问属性。 如果传递的对象为 null，则方法和属性将返回 null，而不是导致错误或抛出异常。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$user = User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> optional($user)-&gt;name;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>原文地址: <a href="https://tutsforweb.com/10-best-laravel-helpers/" target="_blank" rel="noopener">https://tutsforweb.com/10-best-laravel-helpers/</a></p>
-</blockquote>
+            <h1 id="冒泡排序-Bubble-Sort"><a href="#冒泡排序-Bubble-Sort" class="headerlink" title="冒泡排序 (Bubble Sort)"></a>冒泡排序 (Bubble Sort)</h1><p>冒泡排序（英语：Bubble Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序（如从大到小、首字母从A到Z）错误就把他们交换过来。 </p>
+<p>演示动画:<br><img src="/../images/BubbleSort.gif" alt="冒泡排序"></p>
+<p>PHP代码实现：<br><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * main</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> void</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    $array = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</span><br><span class="line">    bubbleSort($array, count($array) - <span class="hljs-number">1</span>);</span><br><span class="line">    fwrite(STDOUT, <span class="hljs-string">"排序结果: "</span> . PHP_EOL);</span><br><span class="line">    <span class="hljs-keyword">foreach</span> ($array <span class="hljs-keyword">as</span> $value) &#123;</span><br><span class="line">        fwrite(STDOUT, $value . PHP_EOL);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 冒泡排序</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> $array</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> $length</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> void</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(array &amp;$array, int $length)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> ($i = <span class="hljs-number">0</span>; $i &lt; $length; ++$i) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> ($j = <span class="hljs-number">0</span>; $j &lt; $length - $i; ++$j) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> ($array[$j] &gt; $array[$j + <span class="hljs-number">1</span>]) &#123;</span><br><span class="line">                swap($array[$j], $array[$j + <span class="hljs-number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 交换两个值</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> mixed $firstVariable</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> mixed $lastVariable</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> void</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span><span class="hljs-params">(&amp;$firstVariable, &amp;$lastVariable)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    $temp = $firstVariable;</span><br><span class="line">    $firstVariable = $lastVariable;</span><br><span class="line">    $lastVariable = $temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main();</span><br></pre></td></tr></table></figure></p>
 
         </div>
         
