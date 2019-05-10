@@ -150,6 +150,61 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/05/10/selection-sort/" class="image is-7by1">
+            <img class="thumbnail" src="/../images/qiao.png" alt="PHP实现选择排序">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-10T13:28:32.000Z">2019-05-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/算法/">算法</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 read (About 288 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/10/selection-sort/">PHP实现选择排序</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="排序算法-Selection-Sort"><a href="#排序算法-Selection-Sort" class="headerlink" title="排序算法(Selection Sort)"></a>排序算法(Selection Sort)</h1><p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。</p>
+<p>动画演示：</p>
+<p><img src="/../images/selectioSort.gif" alt="选择排序"></p>
+<p>PHP代码实现:</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * main</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> void</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    $array = [<span class="hljs-number">3</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</span><br><span class="line">    selectionSort($array, count($array));</span><br><span class="line"></span><br><span class="line">    fwrite(STDOUT, <span class="hljs-string">"排序结果： \n"</span>);</span><br><span class="line">    <span class="hljs-keyword">foreach</span> ($array <span class="hljs-keyword">as</span> $value) &#123;</span><br><span class="line">        fwrite(STDOUT, $value . <span class="hljs-string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 选择排序</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> array $array</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> int $length</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> void</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">selectionSort</span><span class="hljs-params">(array &amp;$array, int $length)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> ($i = <span class="hljs-number">0</span>; $i &lt; $length - <span class="hljs-number">1</span>; $i ++) &#123; <span class="hljs-comment">// 由于每次都是和最后面的数字进行比较，所以最后一位不需要循环</span></span><br><span class="line">        $min = $i;</span><br><span class="line">        <span class="hljs-keyword">for</span> ($j = $i + <span class="hljs-number">1</span>; $j &lt; $length; $j ++) &#123; <span class="hljs-comment">// 循环未排序号的数字</span></span><br><span class="line">            <span class="hljs-keyword">if</span> ($array[$j] &lt; $array[$min]) &#123;</span><br><span class="line">                $min = $j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap($array[$i], $array[$min]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> mixed $firstVariable</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> mixed $lastVariable</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span><span class="hljs-params">(&amp;$firstVariable, &amp;$lastVariable)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    $temp = $firstVariable;</span><br><span class="line">    $firstVariable = $lastVariable;</span><br><span class="line">    $lastVariable = $temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main();</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/05/07/bubble-sort/" class="image is-7by1">
             <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
         </a>
@@ -243,7 +298,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -350,7 +405,7 @@
                 <span class="level-item">算法</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -364,7 +419,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/helloworld/" style="font-size: 10px;">helloworld</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+        <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/helloworld/" style="font-size: 10px;">helloworld</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
     </div>
 </div>
 
@@ -378,6 +433,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/10/selection-sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/../images/qiao.png" alt="PHP实现选择排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-10T13:28:32.000Z">2019-05-10</time></div>
+                    <a href="/2019/05/10/selection-sort/" class="has-link-black-ter is-size-6">PHP实现选择排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -454,7 +528,7 @@
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -503,21 +577,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/php/">
                         <span class="tag">php</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/算法/">
                         <span class="tag">算法</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -546,6 +620,25 @@
         
         <article class="media">
             
+            <a href="/2019/05/10/selection-sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/../images/qiao.png" alt="PHP实现选择排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-10T13:28:32.000Z">2019-05-10</time></div>
+                    <a href="/2019/05/10/selection-sort/" class="has-link-black-ter is-size-6">PHP实现选择排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/05/07/bubble-sort/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
@@ -619,7 +712,7 @@
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -668,21 +761,21 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/php/">
                         <span class="tag">php</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/算法/">
                         <span class="tag">算法</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
