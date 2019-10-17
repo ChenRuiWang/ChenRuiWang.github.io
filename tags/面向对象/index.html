@@ -151,7 +151,7 @@
     
     <div class="card-image">
         <a href="/2019/10/17/array-access/" class="image is-7by1">
-            <img class="thumbnail" src="/../images/1024.png" alt="PHP数组访问">
+            <img class="thumbnail" src="/../images/banner/php.png" alt="PHP数组访问">
         </a>
     </div>
     
@@ -159,7 +159,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-17T07:34:35.733Z">2019-10-17</time>
+                <time class="level-item has-text-grey" datetime="2019-10-17T07:42:43.000Z">2019-10-17</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/php/">php</a>
@@ -169,7 +169,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 read (About 1 words)
+                    3 分钟 read (About 463 words)
                 </span>
                 
                 
@@ -182,7 +182,23 @@
             
         </h1>
         <div class="content">
-            <h1 id="ArrayAccess"><a href="#ArrayAccess" class="headerlink" title="ArrayAccess"></a>ArrayAccess</h1>
+            <h1 id="ArrayAccess-接口"><a href="#ArrayAccess-接口" class="headerlink" title="ArrayAccess 接口"></a><code>ArrayAccess</code> 接口</h1><p>平常使用的 <a href="https://laravel.com/" target="_blank" rel="noopener">Laravel</a> 框架的模型对象既可以使用箭头来进行赋值, 又可以使用数组方式进行赋值.</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$user = <span class="hljs-keyword">new</span> Users();</span><br><span class="line"></span><br><span class="line">$user-&gt;name = <span class="hljs-string">"RandyChan"</span>;</span><br><span class="line">$user[<span class="hljs-string">'email'</span>] = <span class="hljs-string">"M17607475471@163.com"</span>;</span><br></pre></td></tr></table></figure>
+<p>通过以上两种方式都能给对象赋值, 这个功能主要是实现了 <code>ArrayAccess</code> 接口和 <code>__get</code> 和 <code>__set</code> 这两个魔术方法.</p>
+<p><img src="/../images/arrayAccess.jpg" alt="ArrayAccess"></p>
+<p>实现 <code>ArrayAccess</code> 接口需要实现四个方法.</p>
+<ul>
+<li><code>offsetExists(mixed $offset): boolean</code> : 检查一个偏移位置是否存在</li>
+<li><code>offsetGet(mixed $offset): mixed</code>: 获取一个偏移位置的值</li>
+<li><code>offsetSet(mixed $offset, mixed $value): void</code>: 设置一个偏移位置的值</li>
+<li><code>offsetUnset(mixed $offset)</code>: 复位一个偏移位置的值</li>
+</ul>
+<blockquote>
+<p>其中 <code>$offset</code> 参数代表数组的键, <code>$value</code> 参数代表数组的值</p>
+</blockquote>
+<h2 id="实现-ArrayAccess-接口"><a href="#实现-ArrayAccess-接口" class="headerlink" title="实现 ArrayAccess 接口"></a>实现 <code>ArrayAccess</code> 接口</h2><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">ArrayAccess</span></span></span><br><span class="line"><span class="hljs-class"></span>&#123;</span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 声明一个数组存储数据</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@var</span> array</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">private</span> $data = [];</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 检查一个偏移位置是否存在, 只需判断这个键是否存在定义好的data变量里面</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $offset</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> bool|mixed</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetExists</span><span class="hljs-params">($offset)</span></span></span><br><span class="line"><span class="hljs-function">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;data[$offset]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 获取一个偏移位置的值, 实现该方法只需要返回 data 数组对应的值就行</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $offset</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> mixed</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetGet</span><span class="hljs-params">($offset)</span></span></span><br><span class="line"><span class="hljs-function">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;data[$offset];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 设置一个偏移位置的值, 往 data 里面设置就行</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $offset</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $value</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetSet</span><span class="hljs-params">($offset, $value)</span></span></span><br><span class="line"><span class="hljs-function">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;data[$offset] = $value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 复位一个偏移位置的值, 删除数组里面的值, 这里先判断一下值是否存在</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $offset</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetUnset</span><span class="hljs-params">($offset)</span></span></span><br><span class="line"><span class="hljs-function">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;offsetExists($offset)) &#123;</span><br><span class="line">            <span class="hljs-keyword">unset</span>(<span class="hljs-keyword">$this</span>-&gt;data[$offset]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 当设置一个不存在的属性时触发</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $offset</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $value</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($offset, $value)</span></span></span><br><span class="line"><span class="hljs-function">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;data[$offset] = $value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 当获取一个不存在的属性是触发</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> mixed $offset</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> mixed</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($offset)</span></span></span><br><span class="line"><span class="hljs-function">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;data[$offset];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$user = <span class="hljs-keyword">new</span> User();</span><br><span class="line">$user[<span class="hljs-string">'name'</span>] = <span class="hljs-string">"RandyChan"</span>;</span><br><span class="line">$user-&gt;email = <span class="hljs-string">"M17607475471@163.com"</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $user-&gt;name . <span class="hljs-string">"\n"</span> . $user[<span class="hljs-string">'email'</span>];</span><br></pre></td></tr></table></figure>
+<p>执行结果<br><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RandyChan</span><br><span class="line">M17607475471@163.com</span><br></pre></td></tr></table></figure></p>
+
         </div>
         
         
@@ -260,7 +276,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -369,7 +385,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/helloworld/" style="font-size: 10px;">helloworld</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/排序/" style="font-size: 15px;">排序</a> <a href="/tags/接口/" style="font-size: 10px;">接口</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+        <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/helloworld/" style="font-size: 10px;">helloworld</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/排序/" style="font-size: 15px;">排序</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
     </div>
 </div>
 
@@ -388,13 +404,13 @@
             
             <a href="/2019/10/17/array-access/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/1024.png" alt="PHP数组访问">
+                    <img class="thumbnail" src="/../images/banner/php.png" alt="PHP数组访问">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-17T07:34:35.733Z">2019-10-17</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-17T07:42:43.000Z">2019-10-17</time></div>
                     <a href="/2019/10/17/array-access/" class="has-link-black-ter is-size-6">PHP数组访问</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/php/">php</a>
@@ -407,7 +423,7 @@
             
             <a href="/2019/05/10/selection-sort/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/qiao.png" alt="PHP实现选择排序">
+                    <img class="thumbnail" src="/../images/banner/qiao.png" alt="PHP实现选择排序">
                 </p>
             </a>
             
@@ -426,7 +442,7 @@
             
             <a href="/2019/05/07/bubble-sort/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
+                    <img class="thumbnail" src="/../images/banner/mac.png" alt="PHP实现冒泡排序">
                 </p>
             </a>
             
@@ -565,13 +581,6 @@
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
                         <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/接口/">
-                        <span class="tag">接口</span>
-                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -616,13 +625,13 @@
             
             <a href="/2019/10/17/array-access/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/1024.png" alt="PHP数组访问">
+                    <img class="thumbnail" src="/../images/banner/php.png" alt="PHP数组访问">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-17T07:34:35.733Z">2019-10-17</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-17T07:42:43.000Z">2019-10-17</time></div>
                     <a href="/2019/10/17/array-access/" class="has-link-black-ter is-size-6">PHP数组访问</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/php/">php</a>
@@ -635,7 +644,7 @@
             
             <a href="/2019/05/10/selection-sort/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/qiao.png" alt="PHP实现选择排序">
+                    <img class="thumbnail" src="/../images/banner/qiao.png" alt="PHP实现选择排序">
                 </p>
             </a>
             
@@ -654,7 +663,7 @@
             
             <a href="/2019/05/07/bubble-sort/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
+                    <img class="thumbnail" src="/../images/banner/mac.png" alt="PHP实现冒泡排序">
                 </p>
             </a>
             
@@ -793,13 +802,6 @@
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
                         <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/接口/">
-                        <span class="tag">接口</span>
-                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
