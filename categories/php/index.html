@@ -2,13 +2,13 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: php - RandyChan的博客</title>
+<title>Categoria: php - RandyChan的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     <meta name="description" content="RandyChan的博客-RandyChan">
-<meta name="keywords" content="PHP, JavaScript, Vue, RandyChan的博客, MySQL, 算法">
+<meta name="keywords" content="PHP，JavaScript，Vue，RandyChan的博客，MySQL，算法，Python，爬虫">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RandyChan的博客">
 <meta property="og:url" content="https://chenruiwang.github.io/categories/php/index.html">
@@ -142,106 +142,13 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categories</a></li>
+            <li><a href="/categories">Categorias</a></li>
             
             <li class="is-active"><a href="#" aria-current="page">php</a></li>
         </ul>
         </nav>
     </div>
 </div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/14/10-best-laravel-helpers/" class="image is-7by1">
-            <img class="thumbnail" src="/../images/food.png" alt="十个推荐使用的Laravel函数">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-14T07:34:32.641Z">2020-05-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/php/">php</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 分钟 read (About 933 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/14/10-best-laravel-helpers/">十个推荐使用的Laravel函数</a>
-            
-        </h1>
-        <div class="content">
-            <p>Laravel中包含各种全局辅助函数。可以使用它们来简化开发流程。在这里，我将编写10个最好用的laravel帮助函，数用于使我的开发更容易。 您必须考虑在必要时使用它们。</p>
-<p>您还可以查看中文文档发现更多的辅助函数<a href="https://learnku.com/docs/laravel/5.8/helpers/3919" target="_blank" rel="noopener">Laravel help functions</a></p>
-<h1 id="array-dot"><a href="#array-dot" class="headerlink" title="array_dot()"></a>array_dot()</h1><hr>
-<p><code>array_dot()</code> 辅助函数允许你将多维数组转换为使用点符号的一维数组。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$array = [</span><br><span class="line">    <span class="hljs-string">'user'</span> =&gt; [<span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'something'</span>],</span><br><span class="line">    <span class="hljs-string">'app'</span> =&gt; [<span class="hljs-string">'creator'</span> =&gt; [<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'someone'</span>], <span class="hljs-string">'created'</span> =&gt; <span class="hljs-string">'today'</span>]</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$dot_array = array_dot($array);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// [user.username] =&gt; something, [app.creator.name] =&gt; someone, [app.created] =&gt; today</span></span><br></pre></td></tr></table></figure>
-<h1 id="array-get"><a href="#array-get" class="headerlink" title="array_get()"></a>array_get()</h1><hr>
-<p><code>array_get()</code> 函数使用点符号从多维数组中检索值。<br><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$array = [</span><br><span class="line">    <span class="hljs-string">'user'</span> =&gt; [<span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'something'</span>],</span><br><span class="line">    <span class="hljs-string">'app'</span> =&gt; [<span class="hljs-string">'creator'</span> =&gt; [<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'someone'</span>], <span class="hljs-string">'created'</span> =&gt; <span class="hljs-string">'today'</span>]</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$name = array_get($array, <span class="hljs-string">'app.creator.name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// someone</span></span><br></pre></td></tr></table></figure></p>
-<p>如果key不存在, <code>array_get()</code> 函数还接受可选的第三个参数作为默认值。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$name = array_get($array, <span class="hljs-string">'app.creator.name'</span>, <span class="hljs-string">'anonymous'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// anonymous</span></span><br></pre></td></tr></table></figure>
-<h1 id="public-path"><a href="#public-path" class="headerlink" title="public_path()"></a>public_path()</h1><hr>
-<p><code>public_path()</code> 返回 Laravel 应用程序中公共目录的完全限定的绝对路径。 你还可以将路径传递到公共目录中的文件或目录以获取该资源的绝对路径。 它将简单地将 public_path() 添加到你的参数中。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$public_path  = public_puth();</span><br><span class="line"></span><br><span class="line">$path = public_path(<span class="hljs-string">'js/app.js'</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="Str-orderedUuid"><a href="#Str-orderedUuid" class="headerlink" title="Str::orderedUuid()"></a>Str::orderedUuid()</h1><hr>
-<p><code>Str::orderedUuid()</code>函数首先生成一个时间戳 uuid。 这个 uuid 可以存储在索引数据库列中。 这些 uuid 是基于时间戳创建的，因此它们会保留你的内容索引。 在 Laravel 5.6 中使用它时，会引发 <code>Ramsey\Uuid\Exception\UnsatisfiedDependencyException</code>。 要解决此问题，只需运行以下命令即可使用 <code>moontoast/math</code> 包：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;moontoast/math&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Str</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> (string) Str::orderByUuid()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// A timestamp first uuid</span></span><br></pre></td></tr></table></figure>
-<h1 id="str-plural"><a href="#str-plural" class="headerlink" title="str_plural()"></a>str_plural()</h1><hr>
-<p><code>str_plural()</code> 函数将字符串转换为复数形式。该功能只支持英文。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">echo</span> str_plural(<span class="hljs-string">'bank'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// banks</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> str_plural(<span class="hljs-string">'developer'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// developers</span></span><br></pre></td></tr></table></figure>
-<h1 id="route"><a href="#route" class="headerlink" title="route()"></a>route()</h1><hr>
-<p><code>route()</code> 函数为指定的路由生成路由 URL。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'login'</span>);</span><br></pre></td></tr></table></figure>
-<p>如果路由接受参数，你可以简单地将它们作为第二个参数传递给一个数组。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'products'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>]);</span><br></pre></td></tr></table></figure>
-<p>如果你想产生一个相对的 URL 而不是一个绝对的 URL，你可以传递 false 作为第三个参数。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'products'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>], <span class="hljs-keyword">false</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="tap"><a href="#tap" class="headerlink" title="tap()"></a>tap()</h1><hr>
-<p><code>tap()</code> 函数接受两个参数：一个值和一个闭包。该值将被传递给闭包，然后该值将被返回。闭包返回值无关紧要。<br><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$user = App\User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> tap($user, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($user)</span> </span>&#123;</span><br><span class="line">    $user-&gt;update([</span><br><span class="line">        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Random'</span></span><br><span class="line">    ]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>它不会返回布尔值，而是返回 <code>User Model</code>。</p>
-<p>如果你没有传递闭包，你也可以使用 <code>User Model</code> 的任何方法。 无论实际返回的方法如何，返回值都将始终为值。 在下面的例子中，它将返回 <code>User Model</code> 而不是布尔值。 <code>update</code> 方法返回布尔值，但由于用了 <code>tap</code> ，所以它将返回 <code>User Model</code>。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$user = App\User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> tap($user)-&gt;update([</span><br><span class="line">    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'SomeName'</span></span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
-<h1 id="dump"><a href="#dump" class="headerlink" title="dump()"></a>dump()</h1><hr>
-<p><code>dump()</code> 函数会 dump 给定的变量，同时也支持同时传入多个变量。这对调试非常有用。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dump($var1);</span><br><span class="line">dump($var1, $var2, $var3);</span><br></pre></td></tr></table></figure>
-<h1 id="str-slug"><a href="#str-slug" class="headerlink" title="str_slug()"></a>str_slug()</h1><hr>
-<p><code>str_slug()</code> 函数将给定的字符串生成一个 URL 友好的 slug。 你可以使用此功能为帖子或产品标题创建一个 slug。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$slug = str_slug(<span class="hljs-string">'Helpers in Laravel'</span>, <span class="hljs-string">'-'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// helpers-in-laravel</span></span><br></pre></td></tr></table></figure>
-<h1 id="optional"><a href="#optional" class="headerlink" title="optional()"></a>optional()</h1><hr>
-<p><code>optional()</code> 函数接受一个参数，你可以调用参数的方法或访问属性。 如果传递的对象为 null，则方法和属性将返回 null，而不是导致错误或抛出异常。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$user = User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> optional($user)-&gt;name;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>原文地址: <a href="https://tutsforweb.com/10-best-laravel-helpers/" target="_blank" rel="noopener">https://tutsforweb.com/10-best-laravel-helpers/</a></p>
-</blockquote>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
 
     <div class="card">
     
@@ -309,6 +216,99 @@
 
 
 
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2018/08/15/10-best-laravel-helpers/" class="image is-7by1">
+            <img class="thumbnail" src="/../images/food.png" alt="十个推荐使用的Laravel函数">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-08-15T05:20:00.000Z">2018-08-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/php/">php</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 分钟 read (About 933 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/08/15/10-best-laravel-helpers/">十个推荐使用的Laravel函数</a>
+            
+        </h1>
+        <div class="content">
+            <p>Laravel中包含各种全局辅助函数。可以使用它们来简化开发流程。在这里，我将编写10个最好用的laravel帮助函，数用于使我的开发更容易。 您必须考虑在必要时使用它们。</p>
+<p>您还可以查看中文文档发现更多的辅助函数<a href="https://learnku.com/docs/laravel/5.8/helpers/3919" target="_blank" rel="noopener">Laravel help functions</a></p>
+<h1 id="array-dot"><a href="#array-dot" class="headerlink" title="array_dot()"></a>array_dot()</h1><hr>
+<p><code>array_dot()</code> 辅助函数允许你将多维数组转换为使用点符号的一维数组。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$array = [</span><br><span class="line">    <span class="hljs-string">'user'</span> =&gt; [<span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'something'</span>],</span><br><span class="line">    <span class="hljs-string">'app'</span> =&gt; [<span class="hljs-string">'creator'</span> =&gt; [<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'someone'</span>], <span class="hljs-string">'created'</span> =&gt; <span class="hljs-string">'today'</span>]</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$dot_array = array_dot($array);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// [user.username] =&gt; something, [app.creator.name] =&gt; someone, [app.created] =&gt; today</span></span><br></pre></td></tr></table></figure>
+<h1 id="array-get"><a href="#array-get" class="headerlink" title="array_get()"></a>array_get()</h1><hr>
+<p><code>array_get()</code> 函数使用点符号从多维数组中检索值。<br><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$array = [</span><br><span class="line">    <span class="hljs-string">'user'</span> =&gt; [<span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'something'</span>],</span><br><span class="line">    <span class="hljs-string">'app'</span> =&gt; [<span class="hljs-string">'creator'</span> =&gt; [<span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'someone'</span>], <span class="hljs-string">'created'</span> =&gt; <span class="hljs-string">'today'</span>]</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$name = array_get($array, <span class="hljs-string">'app.creator.name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// someone</span></span><br></pre></td></tr></table></figure></p>
+<p>如果key不存在, <code>array_get()</code> 函数还接受可选的第三个参数作为默认值。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$name = array_get($array, <span class="hljs-string">'app.creator.name'</span>, <span class="hljs-string">'anonymous'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// anonymous</span></span><br></pre></td></tr></table></figure>
+<h1 id="public-path"><a href="#public-path" class="headerlink" title="public_path()"></a>public_path()</h1><hr>
+<p><code>public_path()</code> 返回 Laravel 应用程序中公共目录的完全限定的绝对路径。 你还可以将路径传递到公共目录中的文件或目录以获取该资源的绝对路径。 它将简单地将 public_path() 添加到你的参数中。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$public_path  = public_puth();</span><br><span class="line"></span><br><span class="line">$path = public_path(<span class="hljs-string">'js/app.js'</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="Str-orderedUuid"><a href="#Str-orderedUuid" class="headerlink" title="Str::orderedUuid()"></a>Str::orderedUuid()</h1><hr>
+<p><code>Str::orderedUuid()</code>函数首先生成一个时间戳 uuid。 这个 uuid 可以存储在索引数据库列中。 这些 uuid 是基于时间戳创建的，因此它们会保留你的内容索引。 在 Laravel 5.6 中使用它时，会引发 <code>Ramsey\Uuid\Exception\UnsatisfiedDependencyException</code>。 要解决此问题，只需运行以下命令即可使用 <code>moontoast/math</code> 包：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;moontoast/math&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Str</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> (string) Str::orderByUuid()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// A timestamp first uuid</span></span><br></pre></td></tr></table></figure>
+<h1 id="str-plural"><a href="#str-plural" class="headerlink" title="str_plural()"></a>str_plural()</h1><hr>
+<p><code>str_plural()</code> 函数将字符串转换为复数形式。该功能只支持英文。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">echo</span> str_plural(<span class="hljs-string">'bank'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// banks</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> str_plural(<span class="hljs-string">'developer'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// developers</span></span><br></pre></td></tr></table></figure>
+<h1 id="route"><a href="#route" class="headerlink" title="route()"></a>route()</h1><hr>
+<p><code>route()</code> 函数为指定的路由生成路由 URL。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'login'</span>);</span><br></pre></td></tr></table></figure>
+<p>如果路由接受参数，你可以简单地将它们作为第二个参数传递给一个数组。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'products'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>]);</span><br></pre></td></tr></table></figure>
+<p>如果你想产生一个相对的 URL 而不是一个绝对的 URL，你可以传递 false 作为第三个参数。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = route(<span class="hljs-string">'products'</span>, [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>], <span class="hljs-keyword">false</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="tap"><a href="#tap" class="headerlink" title="tap()"></a>tap()</h1><hr>
+<p><code>tap()</code> 函数接受两个参数：一个值和一个闭包。该值将被传递给闭包，然后该值将被返回。闭包返回值无关紧要。<br><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$user = App\User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> tap($user, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($user)</span> </span>&#123;</span><br><span class="line">    $user-&gt;update([</span><br><span class="line">        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Random'</span></span><br><span class="line">    ]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>它不会返回布尔值，而是返回 <code>User Model</code>。</p>
+<p>如果你没有传递闭包，你也可以使用 <code>User Model</code> 的任何方法。 无论实际返回的方法如何，返回值都将始终为值。 在下面的例子中，它将返回 <code>User Model</code> 而不是布尔值。 <code>update</code> 方法返回布尔值，但由于用了 <code>tap</code> ，所以它将返回 <code>User Model</code>。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$user = App\User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> tap($user)-&gt;update([</span><br><span class="line">    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'SomeName'</span></span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<h1 id="dump"><a href="#dump" class="headerlink" title="dump()"></a>dump()</h1><hr>
+<p><code>dump()</code> 函数会 dump 给定的变量，同时也支持同时传入多个变量。这对调试非常有用。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dump($var1);</span><br><span class="line">dump($var1, $var2, $var3);</span><br></pre></td></tr></table></figure>
+<h1 id="str-slug"><a href="#str-slug" class="headerlink" title="str_slug()"></a>str_slug()</h1><hr>
+<p><code>str_slug()</code> 函数将给定的字符串生成一个 URL 友好的 slug。 你可以使用此功能为帖子或产品标题创建一个 slug。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$slug = str_slug(<span class="hljs-string">'Helpers in Laravel'</span>, <span class="hljs-string">'-'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// helpers-in-laravel</span></span><br></pre></td></tr></table></figure>
+<h1 id="optional"><a href="#optional" class="headerlink" title="optional()"></a>optional()</h1><hr>
+<p><code>optional()</code> 函数接受一个参数，你可以调用参数的方法或访问属性。 如果传递的对象为 null，则方法和属性将返回 null，而不是导致错误或抛出异常。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$user = User::find(<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> optional($user)-&gt;name;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原文地址: <a href="https://tutsforweb.com/10-best-laravel-helpers/" target="_blank" rel="noopener">https://tutsforweb.com/10-best-laravel-helpers/</a></p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
 </div>
                 
 
@@ -324,22 +324,18 @@
             <div class="level-item has-text-centered">
                 <div>
                     
-                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="Your name">
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="RandyChan">
                     
                     
                     <p class="is-size-4 is-block">
-                        Your name
+                        RandyChan
                     </p>
                     
-                    
-                    <p class="is-size-6 is-block">
-                        Your title
-                    </p>
                     
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Your location</span>
+                        <span>ShenZhen, China</span>
                     </p>
                     
                 </div>
@@ -349,37 +345,37 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        13
                     </p>
                 </div>
             </div>
         </nav>
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                Follow</a>
+            <a class="level-item button is-link is-rounded" href="https://github.com/chenruiwang" target="_blank">
+                SEGUIR</a>
         </div>
         
         
@@ -466,13 +462,21 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             <li>
         <a class="level is-marginless" href="/categories/Charles/">
             <span class="level-start">
                 <span class="level-item">Charles</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Python/">
+            <span class="level-start">
+                <span class="level-item">Python</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
@@ -503,9 +507,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
-        <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/helloworld/" style="font-size: 10px;">helloworld</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/排序/" style="font-size: 15px;">排序</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+        <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/helloworld/" style="font-size: 10px;">helloworld</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/排序/" style="font-size: 15px;">排序</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/表情包/" style="font-size: 10px;">表情包</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
     </div>
 </div>
 
@@ -517,8 +521,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/05/15/motions-crawl/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="http://qacmljohe.bkt.clouddn.com/0016.gif" alt="使用 Python 爬取 motions 表情包">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-15T07:20:00.000Z">2020-05-15</time></div>
+                    <a href="/2020/05/15/motions-crawl/" class="has-link-black-ter is-size-6">使用 Python 爬取 motions 表情包</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -530,67 +553,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T08:26:48.718Z">2020-05-14</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T09:20:00.000Z">2020-05-14</time></div>
                     <a href="/2020/05/14/use-charles/" class="has-link-black-ter is-size-6">使用 Charles 对电脑和手机进行抓包</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Charles/">Charles</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/10-best-laravel-helpers/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/food.png" alt="十个推荐使用的Laravel函数">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T07:34:32.641Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/10-best-laravel-helpers/" class="has-link-black-ter is-size-6">十个推荐使用的Laravel函数</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/php/">php</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/bubble-sort/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T02:21:39.665Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/bubble-sort/" class="has-link-black-ter is-size-6">PHP实现冒泡排序</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/helloworld.jpg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T02:21:39.665Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -615,6 +581,44 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/05/14/bubble-sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time></div>
+                    <a href="/2019/05/14/bubble-sort/" class="has-link-black-ter is-size-6">PHP实现冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/10/selection-sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/../images/qiao.png" alt="PHP实现选择排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-10T13:28:32.000Z">2019-05-10</time></div>
+                    <a href="/2019/05/10/selection-sort/" class="has-link-black-ter is-size-6">PHP实现选择排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -623,7 +627,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -633,7 +637,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -655,6 +659,28 @@
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
                     <span class="level-item tag">1</span>
                 </span>
             </a>
@@ -669,7 +695,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -690,6 +716,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Laravel/">
                         <span class="tag">Laravel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -732,7 +765,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/爬虫/">
                         <span class="tag">爬虫</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -740,6 +773,13 @@
                     <a class="tags has-addons" href="/tags/算法/">
                         <span class="tag">算法</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/表情包/">
+                        <span class="tag">表情包</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -770,8 +810,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/05/15/motions-crawl/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="http://qacmljohe.bkt.clouddn.com/0016.gif" alt="使用 Python 爬取 motions 表情包">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-15T07:20:00.000Z">2020-05-15</time></div>
+                    <a href="/2020/05/15/motions-crawl/" class="has-link-black-ter is-size-6">使用 Python 爬取 motions 表情包</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -783,67 +842,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T08:26:48.718Z">2020-05-14</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T09:20:00.000Z">2020-05-14</time></div>
                     <a href="/2020/05/14/use-charles/" class="has-link-black-ter is-size-6">使用 Charles 对电脑和手机进行抓包</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Charles/">Charles</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/10-best-laravel-helpers/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/food.png" alt="十个推荐使用的Laravel函数">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T07:34:32.641Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/10-best-laravel-helpers/" class="has-link-black-ter is-size-6">十个推荐使用的Laravel函数</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/php/">php</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/bubble-sort/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T02:21:39.665Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/bubble-sort/" class="has-link-black-ter is-size-6">PHP实现冒泡排序</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/../images/helloworld.jpg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T02:21:39.665Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -868,6 +870,44 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/05/14/bubble-sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/../images/mac.png" alt="PHP实现冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time></div>
+                    <a href="/2019/05/14/bubble-sort/" class="has-link-black-ter is-size-6">PHP实现冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/10/selection-sort/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/../images/qiao.png" alt="PHP实现选择排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-10T13:28:32.000Z">2019-05-10</time></div>
+                    <a href="/2019/05/10/selection-sort/" class="has-link-black-ter is-size-6">PHP实现选择排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/算法/">算法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -876,7 +916,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -886,7 +926,7 @@
                     <span class="level-item">五月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -908,6 +948,28 @@
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
                     <span class="level-item tag">1</span>
                 </span>
             </a>
@@ -922,7 +984,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -943,6 +1005,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Laravel/">
                         <span class="tag">Laravel</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -985,7 +1054,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/爬虫/">
                         <span class="tag">爬虫</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -993,6 +1062,13 @@
                     <a class="tags has-addons" href="/tags/算法/">
                         <span class="tag">算法</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/表情包/">
+                        <span class="tag">表情包</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1178,10 +1254,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
